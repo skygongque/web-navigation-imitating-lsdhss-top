@@ -17,6 +17,8 @@ web navigation imitating lsdhss top （模仿猎手导航头部的网址导航�
 `
 ; $("#key_value").bind("input propertychange", function (event) {
                  console.log($("#key_value").val())
+                 //改变所有a标签的href值
+                 //..........
                 }
             })
 `
