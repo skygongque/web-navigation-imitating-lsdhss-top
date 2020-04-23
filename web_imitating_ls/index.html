@@ -39,6 +39,11 @@
                     all_hrefs[i].href = all_hrefs[i].id +encodeURIComponent($("#key_value").val())
                 }
             })
+            // 监听a标签链接点击
+            ; $(".container .items span a").click(function () {
+                ; $(this).css('text-decoration', 'line-through')       
+                })
+            
         })
     </script>
     <style>
