@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仿猎手导航头部</title>
+    <!-- <script src="node_modules\jquery\dist\jquery.min.js"></script> -->
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        ; $(document).ready(function () {
+            // 默认显示第一个
+            ; $('.items div').hide()
+                ; $(`.items div:eq(0)`).show()
+                ; $('.category_div span:eq(0)').css('background', '#c81623')
+
+                // 监听选项卡点击
+                ; $(".category_div span").click(function () {
+                    ; $('.category_div span').css('background', 'black')
+                        ; $(this).css('background', '#c81623')
+                        // $(this).index() 获取元素的索引
+                        ; $('.items div').hide()
+                        ; $(`.items div:eq(${$(this).index()})`).show()
+                })
+
+            // href复制一份到id
+            var all_hrefs = $('a')
+            for (i = 0; i < all_hrefs.length; i++) {
+                all_hrefs[i].id = all_hrefs[i].href
+                // 全部新窗口打开
+                all_hrefs[i].target = '_blank'
+            }
+
+            // 监听input内容改变 改变全部href
+            ; $("#key_value").bind("input propertychange", function (event) {
+                // console.log($("#key_value").val())
+                var all_hrefs = $('a')
+                for (i = 0; i < all_hrefs.length; i++) {
+                    all_hrefs[i].href = all_hrefs[i].id +encodeURIComponent($("#key_value").val())
+                }
+            })
+        })
+    </script>
+    <style>
+        body{
+            background: black;
+            color: white;
+            font-size: 20px;
+        }
+        .inputbox {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+        }
+        #key_value{
+            font-size: 22px;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .container .category_div {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+        }
+        .container .category_div .category{
+            display: flex;
+            margin-top: 5px;
+            /* flex-direction: column; 与justify-content冲突*/
+            justify-content: center;
+            width: 60px;
+        }
+
+        .container .items {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .container .items div {
+            display: flex;
+            flex-direction: column;
+        }
+        .container .items div span a{
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+            width: 110px;
+            background: #c81623;
+            /* flex-direction: column; */
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="inputbox">
+        <input type="text" id="key_value" name="" value="" placeholder="请输入关键字">
+    </div>
+    <div class="container">
+        <div class="category_div">
+            <span class="category">综合</span>
+            <span class="category">社交</span>
+            <span class="category">磁力</span>
+            <span class="category">学术</span>
+            <span class="category">开发</span>
+            <span class="category">资源</span>
+            <span class="category">影视</span>
+            <span class="category">网盘</span>
+            <span class="category">素材</span>
+        </div>
+        <div class="items">
+            <div class="item-0">
+                <span><a href="https://www.google.com/search?q=">谷歌</a></span>
+                <span><a href="https://www.baidu.com/s?word=">百度</a></span>
+                <span><a href="https://wap.sogou.com/web/searchList.jsp?keyword=">搜狗</a></span>
+                <span><a href="https://cn.bing.com/search?q=">必应</a></span>
+                <span><a href="https://www.so.com/s?q=">360搜索</a></span>
+                <span><a href="https://www.dogedoge.com/results?q=">多吉</a></span>
+                <span><a href="https://m.mijisou.com/?q=">秘迹</a></span>
+            </div>
+            <div class="item-1">
+                <span class="current"><a rel="nofollow" href="https://s.weibo.com/weibo?q=">微博</a></span><span>
+                    <a rel="nofollow" href="https://weixin.sogou.com/weixin?type=2&amp;query=">微信文章</a></span><span><a
+                        rel="nofollow"
+                        href="https://weixin.sogou.com/weixin?type=1&amp;s_from=input&amp;query=">公众号</a></span><span><a
+                        rel="nofollow" href="https://twitter.com/search?q=">Twitter</a>
+                </span>
+                <span><a rel="nofollow" href="https://www.douban.com/search?q=">豆瓣</a></span>
+                <span><a rel="nofollow" href="https://www.zhihu.com/search?q=">知乎</a></span>
+                <!-- <span><a rel="nofollow"
+                    href="https://tieba.baidu.com/f?ie=utf-8&amp;kw=&amp;fr=search">贴吧</a></span> -->
+                <span><a rel="nofollow" href="https://www.jianshu.com/search?q=">简书</a></span><span><a rel="nofollow"
+                        href="https://dig.chouti.com/search?words=">抽屉</a></span></div>
+            <div class="item-2"><span class="current"><a rel="nofollow"
+                        href="https://baihus.co/index/search.html?keyword=">白虎搜索</a></span><span><a rel="nofollow"
+                        href="https://www.crsoso.com/search.html?name=">超人搜索</a></span><span><a rel="nofollow"
+                        href="http://f.cili001.com/index/index?c=&amp;k=">磁力站</a></span><span><a rel="nofollow"
+                        href="https://thehiddenbay.com/search/">海盗湾</a></span><span><a rel="nofollow"
+                        href="https://biliworld.xyz/s/0/">哔哩搜索</a></span><span><a rel="nofollow"
+                        href="http://www.cltt.me/search/_ctime_1.html">磁力天堂</a></span><span><a rel="nofollow"
+                        href="http://www.eclzz.xyz/s/.html">磁力蜘蛛</a></span><span><a rel="nofollow"
+                        href="https://bt120715.icu/search?keyword=">BT1027</a></span></div>
+            <div class="item-3"><span class="current"><a rel="nofollow"
+                        href="http://scholar.cnki.net/result.aspx?q=">CNKI</a></span><span><a rel="nofollow"
+                        href="https://www.mbalib.com/s?q=">MBA智库</a></span><span><a rel="nofollow"
+                        href="http://xueshu.baidu.com/s?wd=">百度</a></span><span><a rel="nofollow"
+                        href="https://scholar.google.com/scholar?hl=zh-CN&amp;as_sdt=0%2C5&amp;q=&amp;btnG=&amp;lr=">谷歌</a></span><span><a
+                        rel="nofollow" href="https://www.bing.com/academic/search?q=">必应</a></span><span><a
+                        rel="nofollow" href="https://wenku.baidu.com/search?word=">文库</a></span><span><a rel="nofollow"
+                        href="https://www.docin.com/search.do?nkey=">豆丁</a></span><span><a rel="nofollow"
+                        href="http://www.360doc.com/search.html?type=0&amp;word=">360DOC</a></span><span><a
+                        rel="nofollow" href="https://www.doc88.com/tag/">道客</a></span></div>
+            <div class="item-4"><span class="current"><a rel="nofollow"
+                        href="https://github.com/search?utf8=✓&amp;q=">GitHub</a></span><span><a rel="nofollow"
+                        href="https://developer.mozilla.org/zh-CN/search?q=">MDN</a></span><span><a rel="nofollow"
+                        href="https://www.ibm.com/search?lang=zh&amp;cc=cn&amp;q=">IBM</a></span><span><a rel="nofollow"
+                        href="https://social.msdn.microsoft.com/search/zh-cn?query=">MS</a></span><span><a
+                        rel="nofollow" href="http://www.w3cschool.cn/search?w=">W3C</a></span><span><a rel="nofollow"
+                        href="https://so.csdn.net/so/search/s.do?q=">CSDN</a></span><span><a rel="nofollow"
+                        href="http://sou.it168.com/search?t=0&amp;k=">IT168</a></span><span><a rel="nofollow"
+                        href="https://s.geekbang.org/search/c=0/k=/t=">极客</a></span><span><a rel="nofollow"
+                        href="http://zzk.cnblogs.com/s/blogpost?Keywords=">博客园</a></span></div>
+            <div class="item-5"><span class="current"><a rel="nofollow"
+                        href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=0&amp;rsv_idx=1&amp;tn=baidu&amp;wd=pan.baidu.com%20">百度</a></span><span><a
+                        rel="nofollow"
+                        href="https://www.google.com.hk/search?newwindow=1&amp;safe=strict&amp;hl=zh-CN&amp;source=hp&amp;q=pan.baidu.com%20">Google</a></span><span><a
+                        rel="nofollow" href="https://quark.sm.cn/s?q=pan.baidu.com%20">神马</a></span><span><a
+                        rel="nofollow" href="https://www.sogou.com/web?query=pan.baidu.com+">搜狗</a></span><span><a
+                        rel="nofollow" href="https://www.bing.com/search?q=pan.baidu.com+">必应</a></span><span><a
+                        rel="nofollow" href="https://www.so.com/s?q=pan.baidu.com+">360搜索</a></span><span><a
+                        rel="nofollow"
+                        href="https://m.toutiao.com/search/?keyword=pan.baidu.com%20">头条</a></span><span><a
+                        rel="nofollow"
+                        href="http://www.chinaso.com/search/pagesearch.htm?q=pan.baidu.com+">中国搜索</a></span><span><a
+                        rel="nofollow"
+                        href="http://weixin.sogou.com/weixin?type=2&amp;query=pan.baidu.com+">微信</a></span>
+            </div>
+            <div class="item-6"><span class="current"><a rel="nofollow"
+                        href="https://search.bilibili.com/all?keyword=">Bilibili</a></span><span><a rel="nofollow"
+                        href="https://so.youku.com/search_video/q_">优酷</a></span><span><a rel="nofollow"
+                        href="https://so.iqiyi.com/so/q_">爱奇艺</a></span><span><a rel="nofollow"
+                        href="https://v.qq.com/x/search/?q=">腾讯</a></span><span><a rel="nofollow"
+                        href="https://www.cupfox.com/search?key=">茶杯狐</a></span><span><a
+                        href="http://www.rrys2019.com/search/index?keyword=">人人</a></span><span><a rel="nofollow"
+                        href="https://www.dongmanhuayuan.com/search/">动漫</a></span><span><a rel="nofollow"
+                        href="http://pianyuan.la/search?q=">片源网</a></span><span><a rel="nofollow"
+                        href="https://www.acfun.cn/search/?type=complex&keyword=">Acfun</a></span></div>
+            <div class="item-7"><span class="current"><a rel="nofollow"
+                        href="https://vdisk.weibo.com/wap/search/list?keyword=">微盘</a></span><span><a rel="nofollow"
+                        href="https://www.dashengpan.com/search?keyword=">大圣</a></span><span><a rel="nofollow"
+                        href="https://m.layu.net/s/">腊鱼</a></span>
+                        <!-- <span><a rel="nofollow"
+                        href="https://www.jidanso.com/index.php/search/">盘传奇</a></span> -->
+                        <span><a
+                        rel="nofollow" href="https://www.yunpanjingling.com/search/">云盘精灵</a></span>
+                <!-- <span><a rel="nofollow"
+                    href="https://www.yunpz.net/all/s-.html">云铺子</a></span> -->
+                <span><a rel="nofollow" href="http://www.panduoduo.net/s/name/">盘多多</a></span><span><a rel="nofollow"
+                        href="https://www.pantianxia.com/zh/">盘天下</a></span><span><a rel="nofollow"
+                        href="https://www.58wangpan.com/search/kw">58搜索</a></span></div>
+            <div class="item-8"><span class="current"><a rel="nofollow"
+                        href="https://image.baidu.com/search/index?tn=baiduimage&amp;word=">百度</a></span><span><a
+                        rel="nofollow" href="http://huaban.com/search/?q=">花瓣</a></span><span><a rel="nofollow"
+                        href="https://www.zcool.com.cn/search/content?&amp;word=">站酷</a></span><span><a rel="nofollow"
+                        href="https://s.ui.cn/index.html?keywords=">UI中国</a></span><span><a rel="nofollow"
+                        href="https://pixabay.com/zh/images/search/">pixabay</a></span><span><a rel="nofollow"
+                        href="http://www.hituyu.com/tag/">图鱼</a></span><span><a rel="nofollow"
+                        href="https://www.easyicon.net/iconsearch//?s=addtime_DESC">图标</a></span><span><a rel="nofollow"
+                        href="https://www.soogif.com/search/">SOOGIF</a></span><span><a rel="nofollow"
+                        href="http://www.bee-ji.com/s?w=">表情包</a></span></div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
