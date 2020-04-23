@@ -9,6 +9,7 @@ web navigation imitating lsdhss top （模仿猎手导航头部的网址导航�
 -------------------------------------------------
 
 # 效果
+
 ![效果](https://github.com/skygongque/web-navigation-imitating-lsdhss-top/blob/master/web_imitating_ls/picture/example.jpg)
 
 # 核心实现方式
