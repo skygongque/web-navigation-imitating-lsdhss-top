@@ -19,8 +19,7 @@ web navigation imitating lsdhss top （模仿猎手导航头部的网址导航�
 免费体验的服务器15天到期
 ------------
 
-![效果图片](https://github.com/skygongque/web-navigation-imitating-lsdhss-top/blob/master/web_imitating_ls/picture/result_demo.jpg)
-
+<img src="https://github.com/skygongque/web-navigation-imitating-lsdhss-top/blob/master/web_imitating_ls/picture/result_demo.jpg" width="50%" height="50%">
 
 # 核心文件
 index.html
