@@ -15,9 +15,8 @@ web navigation imitating lsdhss top （模仿猎手导航头部的网址导航�
 
 # 效果
 
-## 体验地址(手机端效果更佳) http://154.8.167.43
-免费体验的服务器15天到期
-------------
+## 体验地址(手机端效果更佳) http://154.8.167.43  （如果访问不同说明服务器到期了）
+
 
 <img src="https://github.com/skygongque/web-navigation-imitating-lsdhss-top/blob/master/web_imitating_ls/picture/result_demo.jpg" width="50%" height="50%">
 
