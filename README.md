@@ -41,11 +41,13 @@ index.html
 `
 <span><a href="https://www.baidu.com/s?word=">百度</a></span>
 `
+
 添加一个新的类别如“综合”可在".category_div"下添加一个
 ------
 `
 <span class="category">综合</span>
 `
+
 并在对应".items div"至少添加一个网址
 -----
 保证class="category_div"下的span标签数（类别数）和class="items" 下的div标签数（类别详情）对应即可。item-1,2,3等class没有用到扩展时可以不用顾忌顺序。
