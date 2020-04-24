@@ -21,7 +21,7 @@ web navigation imitating lsdhss top （模仿猎手导航头部的网址导航�
 <img src="https://github.com/skygongque/web-navigation-imitating-lsdhss-top/blob/master/web_imitating_ls/picture/result_demo.jpg" width="50%" height="50%">
 
 # 核心文件
-index.html
+index.html，单文件可离线使用
 --------
 
 
@@ -37,7 +37,7 @@ index.html
             })
 `
 
-# 扩展性
+# 扩展方式
 
 添加一个新的网址如百度可以在".items div"下添加一个
 -------
