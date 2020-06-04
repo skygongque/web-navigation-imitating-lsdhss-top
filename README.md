@@ -1,10 +1,20 @@
 # web-navigation-imitating-lsdhss-top
 web navigation imitating lsdhss top （模仿猎手导航头部的网址导航）
 
+# 安装依赖
+`
+npm install
+`
+
+# 启动服务
+`
+node server.js
+`
+
 # 起因
 
 特别喜欢猎手导航头部搜索的效果，输入一次关键词后，可以用不同的搜索引擎反复搜索。
-解决了搜索时同一关键词反复输入的痛点。
+`解决了搜索时同一关键词反复输入`的痛点。
 -----------------------------------------
 
 ![猎手导航头部](https://github.com/skygongque/web-navigation-imitating-lsdhss-top/blob/master/web_imitating_ls/picture/imitated%20target.jpg)
@@ -14,8 +24,6 @@ web navigation imitating lsdhss top （模仿猎手导航头部的网址导航�
 -------------------------------------------------
 
 # 效果
-
-## 体验地址(手机端效果更佳) http://154.8.167.43  （如果访问不通就是服务器到期了）
 
 
 <img src="https://github.com/skygongque/web-navigation-imitating-lsdhss-top/blob/master/web_imitating_ls/picture/result_demo.jpg" width="50%" height="50%">
