@@ -4,7 +4,7 @@
   "description": "web navigation imitating lsdhss top （模仿猎手导航头部的网址导航）",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.18.2"
   },
   "devDependencies": {},
   "scripts": {
